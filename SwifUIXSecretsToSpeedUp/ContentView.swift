@@ -6,11 +6,21 @@
 //
 
 import SwiftUI
+import SwiftUIX
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                LinkPresentationView(url: URL(string: "https://www.apple.com")!)
+                    .frame(width: 200, height: 200)
+                
+                ActivityIndicator()
+                    .animated(true)
+                    .style(.large)
+            }
+            .navigationTitle("SwiftUIX")
+        }
     }
 }
 
